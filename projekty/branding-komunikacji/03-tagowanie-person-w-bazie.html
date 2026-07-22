@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jak tagować persony w bazie — Raporty Merry</title>
+<style>
+  :root{
+    --bg:#0f1420; --bg-card:#161d2e; --border:#26304a;
+    --text:#e7ebf5; --text-dim:#93a0bd; --accent:#5b8cff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:40px 24px 80px;}
+  a.back{color:var(--accent); text-decoration:none; font-size:.9rem;}
+  h1{font-size:1.6rem; margin:24px 0 4px;}
+  .subtitle{color:var(--text-dim); margin:0 0 32px;}
+  h2{font-size:1.15rem; margin-top:40px; border-bottom:1px solid var(--border); padding-bottom:8px;}
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:.85rem;}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top;}
+  th{color:var(--text-dim); font-weight:600; font-size:.78rem; text-transform:uppercase;}
+  tr:hover{background:#131a2b;}
+  .callout{
+    background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent);
+    border-radius:8px; padding:16px 20px; margin:20px 0; font-size:.92rem;
+  }
+  .tag{
+    display:inline-block; font-size:.72rem; font-weight:700; padding:2px 9px;
+    border-radius:6px; background:#0d1220; border:1px solid var(--border); color:var(--accent);
+    font-family:monospace;
+  }
+  code{background:#0d1220; padding:2px 6px; border-radius:4px; font-size:.85em;}
+  ul{padding-left:20px;}
+  li{margin-bottom:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">&larr; wróć do hub-a raportów</a>
+  <h1>Jak tagować persony w bazie — pola i reguły wyszukiwania</h1>
+  <p class="subtitle">Przełożenie 12 person na sygnały dostępne w bazie zamówień/CRM, po których da się filtrować · 2026-07-22</p>
+
+  <div class="callout">
+    <strong>W skrócie:</strong> Żadna persona nie jest jednym polem w bazie — to zawsze <strong>kombinacja 4-5 sygnałów</strong>
+    (typ konta, kategoria produktu, kanał zamówienia, metoda płatności, adres dostawy). Poniżej: jakie pola dopisać
+    do rekordu klienta/zamówienia oraz gotowa tabela reguł „jeśli X i Y → tag persony”.
+  </div>
+
+  <h2>1. Pola do dodania w bazie (jeśli jeszcze ich nie ma)</h2>
+  <table>
+    <thead><tr><th>Pole</th><th>Skąd wziąć</th><th>Po co</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag">typ_konta</span></td><td>rejestracja</td><td>indywidualne / firmowe / instytucjonalne — odsiewa B2B, Budżetówkę</td></tr>
+      <tr><td><span class="tag">kategoria_produktu</span></td><td>zamówienie</td><td>duże AGD / małe AGD / RTV / elektronika osobista / ogrodowe / hurt wielu modeli</td></tr>
+      <tr><td><span class="tag">kanal_zamowienia</span></td><td>tracking zamówienia</td><td>mobile / desktop / infolinia / social media / marketplace</td></tr>
+      <tr><td><span class="tag">metoda_platnosci</span></td><td>płatność</td><td>karta / BLIK / przy odbiorze / faktura VAT z terminem</td></tr>
+      <tr><td><span class="tag">liczba_adresow_dostawy</span></td><td>historia zamówień</td><td>1 adres = klient indywidualny; wiele adresów = zarządca nieruchomości</td></tr>
+      <tr><td><span class="tag">czestotliwosc_zamowien</span></td><td>historia zamówień</td><td>jednorazowe/awaryjne vs. cykliczne/hurtowe (B2B, reselling)</td></tr>
+      <tr><td><span class="tag">jezyk_komunikacji</span></td><td>preferencje konta / kontakt</td><td>PL / UA / EN — sygnał dla Migrantów i obcokrajowców</td></tr>
+      <tr><td><span class="tag">aktywnosc_w_komentarzach</span></td><td>moduł komentarzy pod poradami</td><td>brak / pytanie / własna porada — sygnał dla Złotych Rączek i Zetek (ambasadorski)</td></tr>
+      <tr><td><span class="tag">typ_adresu_dostawy</span></td><td>adres / GUS na podstawie kodu</td><td>dom jednorodzinny / mieszkanie / instytucja / firma</td></tr>
+      <tr><td><span class="tag">wiek_lub_rok_urodzenia</span></td><td>rejestracja (opcjonalne)</td><td>odsiewa Zetki/Alfy od starszych segmentów, gdy podane dobrowolnie</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2. Reguły tagowania — „jeśli X i Y → persona"</h2>
+  <table>
+    <thead><tr><th>Persona</th><th>Reguła wyszukiwania (AND)</th></tr></thead>
+    <tbody>
+      <tr><td>Rodzinka.pl</td><td>typ_konta=indywidualne + kategoria=duże AGD/RTV premium + adres=dom/duży apartament + kanał=mobile/social</td></tr>
+      <tr><td>Złotopolscy</td><td>typ_konta=indywidualne + kategoria=starsze duże AGD + kanał=desktop/infolinia + częstotliwość=rzadka, awaryjna</td></tr>
+      <tr><td>Kasia i Tomek</td><td>typ_konta=indywidualne + kategoria=małe AGD/pierwsze wyposażenie + kanał=mobile + adres=wynajem/pierwsze M</td></tr>
+      <tr><td>Złote Rączki</td><td>typ_konta=indywidualne + częstotliwość=regularna, małe wolumeny + kanał=telefon/desktop + aktywność_w_komentarzach=własna porada</td></tr>
+      <tr><td>— podpersona Mikroprzedsiębiorca/Fachowiec</td><td>jw. + częstotliwość=częstsza, większe wolumeny → migruj do segmentu B2B</td></tr>
+      <tr><td>Zetki</td><td>typ_konta=indywidualne + kategoria=małe AGD/elektronika/z drugiej ręki + kanał=mobile/social + (opcjonalnie wiek 14-29)</td></tr>
+      <tr><td>— podpersona Twórczyni/Twórca</td><td>jw. + aktywność_w_komentarzach=częsta/własny content, ślad social media (jeśli linkowany profil)</td></tr>
+      <tr><td>Alfy</td><td>nie tagować bezpośrednio — sygnał pośredni: komentarze pod wideo bez konta transakcyjnego</td></tr>
+      <tr><td>B2B</td><td>typ_konta=firmowe + częstotliwość=regularna, duże wolumeny + metoda_płatności=faktura VAT</td></tr>
+      <tr><td>Budżetówka</td><td>typ_konta=instytucjonalne + metoda_płatności=faktura VAT + termin płatności + adres=szkoła/przedszkole/urząd</td></tr>
+      <tr><td>Wynajmujący / zarządcy nieruchomości</td><td>typ_konta=indywidualne/firmowe + liczba_adresów_dostawy&gt;1 + kategoria=AGD/klimatyzacja/TV + częstotliwość=nieregularna, ale wieloadresowa</td></tr>
+      <tr><td>Seniorzy niesamodzielni</td><td>kanał=wyłącznie infolinia + zamówienie składane przez inny numer/adres (rodzina) + (opcjonalnie wiek 75+)</td></tr>
+      <tr><td>Migranci i obcokrajowcy</td><td>język_komunikacji=UA/EN + metoda_płatności=przy odbiorze/BLIK + adres=wynajem</td></tr>
+      <tr><td>Resellerzy / fliperzy</td><td>typ_konta=indywidualne + częstotliwość=regularna + kategoria=szeroki przekrój tanich części, wiele modeli w jednej dostawie</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. Ograniczenia</h2>
+  <ul>
+    <li>Część sygnałów (wiek, motywacja, kompetencja DIY) nie jest w bazie transakcyjnej wprost — wymaga deklaracji klienta (np. krótka ankieta przy rejestracji) albo wnioskowania z zachowania.</li>
+    <li>Reguły najlepiej wdrażać jako <strong>tag prawdopodobieństwa</strong>, nie twardą klasyfikację — klient może pasować do kilku person naraz (np. Złote Rączki + Reseller).</li>
+    <li>Pole <code>aktywnosc_w_komentarzach</code> wymaga połączenia bazy zamówień z modułem komentarzy pod poradami (jeśli to osobne systemy, potrzebny wspólny identyfikator klienta).</li>
+  </ul>
+</div>
+</body>
+</html>
