@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wrażliwość cenowa i konkurencja per persona — Raporty Merry</title>
+<style>
+  :root{
+    --bg:#0f1420; --bg-card:#161d2e; --border:#26304a;
+    --text:#e7ebf5; --text-dim:#93a0bd; --accent:#5b8cff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:40px 24px 80px;}
+  a.back{color:var(--accent); text-decoration:none; font-size:.9rem;}
+  h1{font-size:1.6rem; margin:24px 0 4px;}
+  .subtitle{color:var(--text-dim); margin:0 0 32px;}
+  h2{font-size:1.15rem; margin-top:40px; border-bottom:1px solid var(--border); padding-bottom:8px;}
+  .callout{
+    background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent);
+    border-radius:8px; padding:16px 20px; margin:20px 0; font-size:.92rem;
+  }
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:.84rem;}
+  th,td{text-align:left; padding:9px 11px; border-bottom:1px solid var(--border); vertical-align:top;}
+  th{color:var(--text-dim); font-weight:600; font-size:.76rem; text-transform:uppercase;}
+  .pill{display:inline-block; font-size:.72rem; font-weight:700; padding:2px 9px; border-radius:999px;}
+  .pill.high{background:#2a1010; color:#f87171; border:1px solid #4a1d1d;}
+  .pill.mid{background:#2a2410; color:#eab308; border:1px solid #4a3d1d;}
+  .pill.low{background:#0f2a1c; color:#22c55e; border:1px solid #1d4a30;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">&larr; wróć do hub-a raportów</a>
+  <h1>Wrażliwość cenowa i konkurencja per persona</h1>
+  <p class="subtitle">Wnioskowane z opisów motywacji w dokumencie Persony 2026 — wymaga walidacji realnymi danymi sprzedażowymi · 2026-07-25</p>
+
+  <div class="callout">
+    <strong>Zastrzeżenie:</strong> Poniższa klasyfikacja to <em>wniosek z opisów person</em> (motywacja zakupu, ton komunikacji),
+    nie twarde dane sprzedażowe. Kolumna „Gdzie kupują, jeśli nie u nas" to hipoteza do zweryfikowania
+    (np. ankietą — patrz raport 04, dopisując pytanie o alternatywne miejsce zakupu).
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Persona</th><th>Wrażliwość cenowa</th><th>Co przeważa nad ceną</th><th>Gdzie kupują, jeśli nie u North.pl</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Rodzinka.pl</td><td><span class="pill low">Niska</span></td><td>Czas, wygoda, status</td><td>Marketplace ogólne z szybką dostawą (Allegro Smart)</td></tr>
+      <tr><td>Złotopolscy</td><td><span class="pill high">Wysoka</span></td><td>Zaufanie do znanej marki/sprzedawcy</td><td>Lokalny serwis/sklep AGD, z którym mają historię</td></tr>
+      <tr><td>Kasia i Tomek</td><td><span class="pill high">Wysoka</span></td><td>Szybkość i prostota zakupu</td><td>Allegro, marketplace, porównywarki cen</td></tr>
+      <tr><td>Złote Rączki</td><td><span class="pill mid">Średnia</span></td><td>Dostępność od ręki, uznanie dla wiedzy klienta</td><td>Lokalne hurtownie części, znajomi sprzedawcy</td></tr>
+      <tr><td>Zetki</td><td><span class="pill mid">Średnia</span></td><td>Autentyczność, social proof, eko-argumenty poparte liczbą</td><td>OLX, Vinted (dla sprzętu), rekomendacje z TikToka</td></tr>
+      <tr><td>Alfy</td><td>Nie dotyczy (decyzja rodzica)</td><td>—</td><td>—</td></tr>
+      <tr><td>B2B</td><td><span class="pill high">Wysoka</span> (cena jednostkowa przy hurcie)</td><td>Dostępność magazynowa, czas dostawy</td><td>Hurtownie branżowe, dystrybutorzy części OEM</td></tr>
+      <tr><td>Budżetówka</td><td><span class="pill mid">Średnia</span> (liczy się budżet roczny, nie najniższa cena)</td><td>Zgodność z procedurami zamówień publicznych, faktura VAT</td><td>Dostawcy z umową ramową / z listy zamówień publicznych</td></tr>
+      <tr><td>Wynajmujący/zarządcy</td><td><span class="pill low">Niska</span></td><td>Czas dostawy (presja najemcy/gościa)</td><td>Najbliższy sklep stacjonarny, byle szybko</td></tr>
+      <tr><td>Seniorzy niesamodzielni</td><td><span class="pill low">Niska</span></td><td>Zaufanie, prostota kontaktu, pomoc rodziny</td><td>Serwis polecony przez rodzinę/sąsiada</td></tr>
+      <tr><td>Migranci i obcokrajowcy</td><td><span class="pill high">Wysoka</span></td><td>Zrozumiały język, elastyczna płatność</td><td>Sklepy/grupy FB rekomendowane w społeczności diaspory</td></tr>
+      <tr><td>Resellerzy/fliperzy</td><td><span class="pill high">Wysoka</span> (marża zależy od kosztu części)</td><td>Szerokość asortymentu, rabaty ilościowe</td><td>AliExpress/hurtownie chińskie, OLX na części</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Wniosek</h2>
+  <p>
+    Persony o niskiej wrażliwości cenowej (Rodzinka.pl, Wynajmujący, Seniorzy) to najlepsi kandydaci do komunikacji
+    opartej na wartości i zaufaniu, nie na promocjach. Persony o wysokiej wrażliwości (Złotopolscy, Kasia i Tomek,
+    B2B, Migranci, Resellerzy) reagują na cenę i dostępność — tu rabaty i szybkość dostawy działają skuteczniej
+    niż narracja marki.
+  </p>
+</div>
+</body>
+</html>
