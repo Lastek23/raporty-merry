@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cykl życia dokumentu i dane do uzupełnienia — Raporty Merry</title>
+<style>
+  :root{
+    --bg:#0f1420; --bg-card:#161d2e; --border:#26304a;
+    --text:#e7ebf5; --text-dim:#93a0bd; --accent:#5b8cff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:40px 24px 80px;}
+  a.back{color:var(--accent); text-decoration:none; font-size:.9rem;}
+  h1{font-size:1.6rem; margin:24px 0 4px;}
+  .subtitle{color:var(--text-dim); margin:0 0 32px;}
+  h2{font-size:1.15rem; margin-top:40px; border-bottom:1px solid var(--border); padding-bottom:8px;}
+  .callout{
+    background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent);
+    border-radius:8px; padding:16px 20px; margin:20px 0; font-size:.92rem;
+  }
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:.85rem;}
+  th,td{text-align:left; padding:9px 11px; border-bottom:1px solid var(--border); vertical-align:top;}
+  th{color:var(--text-dim); font-weight:600; font-size:.76rem; text-transform:uppercase;}
+  code{background:#0d1220; padding:2px 6px; border-radius:4px; font-size:.85em;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">&larr; wróć do hub-a raportów</a>
+  <h1>Cykl życia dokumentu i dane do uzupełnienia</h1>
+  <p class="subtitle">Ostatnie trzy punkty z listy uzupełnień: kiedy odświeżać persony, jak policzyć ich wagę i status zdjęć · 2026-07-25</p>
+
+  <h2>7. Kiedy rewidować persony</h2>
+  <table>
+    <thead><tr><th>Trigger</th><th>Co robić</th></tr></thead>
+    <tbody>
+      <tr><td>Przegląd okresowy</td><td>Raz w roku (np. styczeń) — sprawdzić czy opisy motywacji/tonu wciąż pasują, czy pojawił się nowy segment</td></tr>
+      <tr><td>Duża zmiana w danych GSC/GA4</td><td>Jeśli nowy typ zapytań/ruchu urośnie wyraźnie (analogicznie do audytów w <code>raporty-grzegorza</code>) — sprawdzić czy odpowiada istniejącej personie czy wymaga nowej</td></tr>
+      <tr><td>Nowa kategoria produktowa</td><td>Wejście w nowy segment (np. elektronarzędzia, smart home) — może wymagać nowej persony lub podpersony</td></tr>
+      <tr><td>Wyniki ankiety identyfikacyjnej (raport 04)</td><td>Jeśli odpowiedzi często nie pasują do żadnego klucza interpretacji — sygnał że brakuje persony lub trzeba poprawić pytania</td></tr>
+      <tr><td>Uruchomienie/wynik programu ambasadorskiego</td><td>Realne dane o tym, kto faktycznie został ambasadorem, mogą zmienić ranking z raportu 02</td></tr>
+    </tbody>
+  </table>
+
+  <h2>1–2. Waga person i KPI — czego brakuje i jak to policzyć</h2>
+  <div class="callout">
+    <strong>Nie mam dostępu do realnych danych sprzedażowych/CRM North.pl</strong>, więc nie mogę podać tu prawdziwych
+    liczb (% klientów, przychód per persona) — poniżej jest tylko metodologia, jak to policzyć, gdy tagowanie
+    z raportu 03 zostanie wdrożone w bazie.
+  </div>
+  <table>
+    <thead><tr><th>Co policzyć</th><th>Źródło danych</th><th>Jak</th></tr></thead>
+    <tbody>
+      <tr><td>% klientów per persona</td><td>Baza zamówień + tagi z raportu 03</td><td><code>COUNT(klienci) GROUP BY tag_persony / COUNT(wszyscy klienci)</code></td></tr>
+      <tr><td>% przychodu per persona</td><td>jw. + wartość zamówień</td><td><code>SUM(wartość_zamówień) GROUP BY tag_persony / SUM(cały przychód)</code></td></tr>
+      <tr><td>KPI: Rodzinka.pl, Kasia i Tomek, Zetki</td><td>GA4 + zamówienia</td><td>Częstość powrotu na stronę, czas do zakupu, CTR z social/mobile</td></tr>
+      <tr><td>KPI: Złotopolscy, Złote Rączki, Seniorzy</td><td>Infolinia (CRM połączeń)</td><td>Czas rozmowy do finalizacji, % zamówień domkniętych telefonicznie</td></tr>
+      <tr><td>KPI: B2B, Budżetówka, Wynajmujący</td><td>Konta firmowe/instytucjonalne</td><td>Wartość zamówienia (AOV), częstotliwość, czas realizacji faktury</td></tr>
+      <tr><td>KPI: Zetki-Twórczyni, Złote Rączki-Ekspert</td><td>Moduł komentarzy + program ambasadorski</td><td>Liczba UGC/porad dodanych, zasięg udostępnień</td></tr>
+    </tbody>
+  </table>
+
+  <h2>8. Status zdjęć w dokumencie źródłowym</h2>
+  <p>
+    Plik <code>Persony 2026.docx</code> zawiera <strong>13 osadzonych obrazów</strong> (12 person + prawdopodobnie
+    1 dodatkowy, np. logo lub grafika tytułowa) — liczba się zgadza z 12 personami. Nie sprawdziłem jednak, czy każde
+    zdjęcie ma jednoznaczny podpis przypisujący je do konkretnej persony (wymagałoby to otwarcia dokumentu w Wordzie
+    i wizualnej weryfikacji układu). <strong>Rekomendacja:</strong> przy najbliższym przeglądzie dokumentu sprawdźcie
+    ręcznie, czy każde zdjęcie jest jednoznacznie podpisane — jeśli nie, to szybki fix do zrobienia z Tomkiem (grafik).
+  </p>
+</div>
+</body>
+</html>
