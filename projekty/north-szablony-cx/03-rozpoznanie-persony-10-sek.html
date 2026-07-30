@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rozpoznanie persony w 10 sek — Raporty Merry</title>
+<style>
+  :root{
+    --bg:#0f1420; --bg-card:#161d2e; --border:#26304a;
+    --text:#e7ebf5; --text-dim:#93a0bd; --accent:#5b8cff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:40px 24px 80px;}
+  a.back{color:var(--accent); text-decoration:none; font-size:.9rem;}
+  h1{font-size:1.6rem; margin:24px 0 4px;}
+  .subtitle{color:var(--text-dim); margin:0 0 32px;}
+  h2{font-size:1.2rem; margin-top:48px; border-bottom:1px solid var(--border); padding-bottom:8px;}
+  .callout{
+    background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent);
+    border-radius:8px; padding:16px 20px; margin:20px 0; font-size:.92rem;
+  }
+  .scenario{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:10px;
+    padding:18px 22px; margin-bottom:16px;
+  }
+  .scenario h3{margin:0 0 4px; font-size:1.05rem;}
+  .scenario .kiedy{color:var(--text-dim); font-size:.82rem; margin-bottom:14px;}
+  .line{
+    background:#0d1220; border:1px solid var(--border); border-radius:8px;
+    padding:10px 14px; margin:8px 0; font-size:.9rem;
+  }
+  .line b{color:var(--accent); display:block; font-size:.72rem; text-transform:uppercase; margin-bottom:3px;}
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:.84rem;}
+  th,td{text-align:left; padding:9px 11px; border-bottom:1px solid var(--border); vertical-align:top;}
+  th{color:var(--text-dim); font-weight:600; font-size:.76rem; text-transform:uppercase;}
+  code{background:#0d1220; padding:2px 6px; border-radius:4px; font-size:.85em;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">&larr; wróć do hub-a raportów</a>
+  <h1>Rozpoznanie persony w 10 sekund</h1>
+  <p class="subtitle">Skrypt dla konsultanta infolinii — 2-3 pytania wplecione naturalnie w rozmowę, nie ankieta · 2026-07-28</p>
+
+  <div class="callout">
+    <strong>Zasada:</strong> To nie jest lista pytań do odczytania. Wpleć je w naturalny tok rozmowy — tak jak
+    pytałbyś/pytałabyś znajomego. Cel: po 2-3 zdaniach wiesz, czy mówisz z kimś zabieganym (przejdź do konkretów),
+    doświadczonym (nie ucz, tylko potwierdzaj) czy niepewnym (zwolnij, uspokój). Pełne opisy person:
+    <a href="../branding-komunikacji/05-sciaga-persony.html" style="color:var(--accent)">ściąga 12 person</a>.
+  </div>
+
+  <h2>Scenariusz 1 — klient dzwoni po część</h2>
+  <div class="scenario">
+    <div class="kiedy">Kiedy: klient inicjuje rozmowę, szuka konkretnej części</div>
+    <div class="line"><b>Pytanie 1 (po ustaleniu sprzętu)</b>„A to Pan/Pani sam/a zamontuje, czy ktoś pomoże?"</div>
+    <div class="line"><b>Pytanie 2</b>„Do własnego mieszkania, czy może w czyimś imieniu — serwis, wynajem, urząd?"</div>
+    <div class="line"><b>Pytanie 3 (tylko jeśli niejasne)</b>„Pali się to, czy ma Pan/Pani chwilę, żeby się przygotować?"</div>
+  </div>
+
+  <h2>Scenariusz 2 — proaktywny telefon, klient czeka na paczkę</h2>
+  <div class="scenario">
+    <div class="kiedy">Kiedy: dzwonimy sami, sprawdzić czy klient poradzi sobie z naprawą (link do artykułu w bazie porad + kanał YT)</div>
+    <div class="line"><b>Otwarcie</b>„Dzień dobry, dzwonię z North.pl w sprawie zamówienia na [część] — chciałem/am tylko zapytać, czy widział/a Pan/Pani nasz poradnik do tej naprawy? Mamy artykuł i krótki film."</div>
+    <div class="line"><b>Pytanie 1</b>„Robi Pan/Pani taką naprawę pierwszy raz, czy już to Panu/Pani znane?"</div>
+    <div class="line"><b>Pytanie 2</b>„Woli Pan/Pani obejrzeć film krok po kroku, czy wolałby Pan/Pani, żebyśmy zorganizowali komuś montaż?"</div>
+  </div>
+
+  <h2>Scenariusz 3 — po dostawie, pytamy jak poszła naprawa</h2>
+  <div class="scenario">
+    <div class="kiedy">Kiedy: follow-up po dostarczeniu paczki</div>
+    <div class="line"><b>Otwarcie</b>„Dzień dobry, dzwonię zapytać czy naprawa [sprzętu] się udała?"</div>
+    <div class="line"><b>Jeśli TAK</b>„Super! To pierwszy raz, czy ma Pan/Pani już w tym wprawę?"</div>
+    <div class="line"><b>Jeśli TAK + brzmi na doświadczonego/aktywnego</b>„Chętnie pokazuje Pan/Pani takie rzeczy znajomym albo w sieci?" <em>(sygnał pod program ambasadorski)</em></div>
+    <div class="line"><b>Jeśli NIE</b>„Co się nie udało — mogę pomóc znaleźć krok, na którym utknęło?"</div>
+  </div>
+
+  <h2>Szybki dekoder — co usłyszysz → z kim rozmawiasz → jak dalej prowadzić</h2>
+  <table>
+    <thead><tr><th>Co mówi klient</th><th>Prawdopodobna persona</th><th>Jak dalej prowadzić rozmowę</th></tr></thead>
+    <tbody>
+      <tr><td>„Sam/a zrobię, tylko szybko" + w domu</td><td>Rodzinka.pl / Kasia i Tomek</td><td>Konkrety, bez owijania — od razu najszybsza opcja</td></tr>
+      <tr><td>„Wolę, żeby ktoś to zrobił" + starszy głos, ostrożny ton</td><td>Złotopolscy / Seniorzy niesamodzielni</td><td>Zwolnij tempo, zaproponuj usługę montażu, nie naciskaj na DIY</td></tr>
+      <tr><td>„Robię to regularnie, też sąsiadom pomagam"</td><td>Złote Rączki</td><td>Nie tłumacz podstaw — pytaj o model, dawaj info fachowe wprost</td></tr>
+      <tr><td>„Pierwszy raz, ale chętnie spróbuję" + młody głos</td><td>Zetki / Kasia i Tomek</td><td>Zaproponuj wideo-instrukcję, luźny ton, bez pouczania</td></tr>
+      <tr><td>„To dla serwisu/warsztatu" / „zamawiam więcej naraz"</td><td>B2B</td><td>Od razu przejdź do numeru części, ilości, terminu — bez narracji marki</td></tr>
+      <tr><td>„To dla mieszkania na wynajem, gość czeka"</td><td>Wynajmujący/zarządcy</td><td>Zapytaj czy pilne, zaproponuj najszybszą dostawę</td></tr>
+      <tr><td>„W imieniu szkoły/urzędu, potrzebuję faktury"</td><td>Budżetówka</td><td>Pytaj o rodzaj dokumentacji i termin budżetowy</td></tr>
+      <tr><td>„Kupuję takie sprzęty regularnie do naprawy i sprzedaży"</td><td>Resellerzy/fliperzy</td><td>Zapytaj o skalę (ile miesięcznie) — zaproponuj rabat ilościowy</td></tr>
+      <tr><td>Bariera językowa / akcent</td><td>Migranci i obcokrajowcy</td><td>Zaproponuj wersję instrukcji po ukraińsku/angielsku, mów wolniej i prościej</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Uwaga:</strong> Te pytania nie muszą paść w tej kolejności ani dosłownym brzmieniu — chodzi o to, żeby
+    konsultant naturalnie zebrał te same 2-3 sygnały (kto naprawia, dla kogo, jak pilne) niezależnie od tego, jak
+    potoczy się rozmowa. Pełne wzorce tonu per persona — patrz <a href="../branding-komunikacji/05-sciaga-persony.html" style="color:var(--accent)">ściąga 12 person</a>.
+  </div>
+</div>
+</body>
+</html>
