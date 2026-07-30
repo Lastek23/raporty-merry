@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One-pager: rozpoznawanie person — Raporty Merry</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&subset=latin-ext" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1420; --bg-card:#161d2e; --border:#26304a;
+    --text:#e7ebf5; --text-dim:#93a0bd; --accent:#5b8cff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:'Roboto',-apple-system,Segoe UI,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.5;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:32px 24px 60px;}
+  a.back{color:var(--accent); text-decoration:none; font-size:.9rem;}
+  h1{font-size:1.4rem; margin:20px 0 4px;}
+  .subtitle{color:var(--text-dim); margin:0 0 20px; font-size:.85rem;}
+  .callout{
+    background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent);
+    border-radius:8px; padding:12px 16px; margin:14px 0; font-size:.85rem;
+  }
+  .q-big{
+    background:var(--bg-card); border:2px solid var(--accent); border-radius:10px;
+    padding:16px 20px; margin:16px 0; font-size:1.1rem; font-weight:600; text-align:center;
+  }
+  table{width:100%; border-collapse:collapse; margin:12px 0; font-size:.78rem;}
+  th,td{text-align:left; padding:6px 8px; border-bottom:1px solid var(--border); vertical-align:top;}
+  th{color:var(--text-dim); font-weight:600; font-size:.7rem; text-transform:uppercase;}
+  .footer-links{font-size:.78rem; color:var(--text-dim); margin-top:20px; text-align:center;}
+  .footer-links a{color:var(--accent);}
+  @media print{
+    body{background:#fff; color:#000;}
+    a.back, .footer-links{display:none;}
+    .callout, .q-big{background:#f2f2f2; border-color:#999; color:#000;}
+    table th{color:#333;}
+    td, th{border-color:#ccc;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">&larr; wróć do hub-a raportów</a>
+  <h1>Jak rozpoznać personę w rozmowie</h1>
+  <p class="subtitle">One-pager na biurko — rozdawany po warsztacie (patrz <a href="01-plan-warsztatu.html" style="color:var(--accent)">plan warsztatu</a>) · 2026-07-30</p>
+
+  <div class="callout">
+    Rozpoznanie persony to efekt uboczny tego, że szczerze pomagasz — nie osobna procedura do odklikania.
+    Pełny skrypt: <a href="../north-szablony-cx/03-rozpoznanie-persony-10-sek.html" style="color:var(--accent)">Rozpoznanie persony w 10 sek</a>.
+  </div>
+
+  <div class="q-big">„Czy poradzi Pan/Pani sobie z wymianą, czy będzie potrzebna pomoc?"</div>
+
+  <table>
+    <thead><tr><th>Co słyszysz</th><th>Prawdopodobnie</th><th>Jak dalej</th></tr></thead>
+    <tbody>
+      <tr><td>Pewny ton, „sam sobie poradzę"</td><td>Złote Rączki / Zetki</td><td>Konkrety wprost, bez tłumaczenia podstaw</td></tr>
+      <tr><td>Niepewny, prosi o dokładne wyjaśnienie</td><td>Złotopolscy / Seniorzy</td><td>Zwolnij, zaproponuj montaż zamiast DIY</td></tr>
+      <tr><td>Pyta o fakturę VAT / większą ilość</td><td>B2B / Budżetówka / Reseller</td><td>Przejdź do konkretów handlowych</td></tr>
+      <tr><td>Mówi że to dla najemcy/gościa, presja czasu</td><td>Wynajmujący/zarządcy</td><td>Zapytaj o pilność, najszybsza dostawa</td></tr>
+      <tr><td>Bariera językowa</td><td>Migranci i obcokrajowcy</td><td>Zaproponuj instrukcję po ukraińsku/angielsku</td></tr>
+      <tr><td>Sam z siebie chwali się efektem naprawy</td><td>Potencjalny ambasador</td><td>Zapytaj, czy chce się podzielić szerzej — nie na siłę</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Ważne z realnych rozmów:</strong> wiek nie przewiduje kompetencji — starszy klient może być bardzo
+    technicznie pewny, młodszy może potrzebować prowadzenia krok po kroku. Licz się z tonem odpowiedzi, nie z głosem.
+  </div>
+
+  <p class="footer-links">
+    Pełna ściąga 12 person: <a href="../branding-komunikacji/05-sciaga-persony.html">link</a> ·
+    Log rzeczywistych rozmów: <a href="../north-szablony-cx/04-log-rzeczywistych-rozmow.html">link</a> ·
+    To żywy dokument — Twoje uwagi z warsztatu w niego wchodzą.
+  </p>
+</div>
+</body>
+</html>
