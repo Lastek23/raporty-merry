@@ -7,14 +7,14 @@
 <style>
   :root{
     --bg:#0f1420; --bg-card:#161d2e; --border:#26304a;
-    --text:#e7ebf5; --text-dim:#93a0bd; --accent:#5b8cff;
+    --text:#e7ebf5; --text-dim:#93a0bd; --accent:#5b8cff; --branch:#eab308;
   }
   *{box-sizing:border-box;}
   body{
     margin:0; font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;
     background:var(--bg); color:var(--text); line-height:1.6;
   }
-  .wrap{max-width:920px; margin:0 auto; padding:40px 24px 80px;}
+  .wrap{max-width:960px; margin:0 auto; padding:40px 24px 80px;}
   a.back{color:var(--accent); text-decoration:none; font-size:.9rem;}
   h1{font-size:1.6rem; margin:24px 0 4px;}
   .subtitle{color:var(--text-dim); margin:0 0 32px;}
@@ -23,6 +23,7 @@
     background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent);
     border-radius:8px; padding:16px 20px; margin:20px 0; font-size:.92rem;
   }
+  .callout.fix{border-left-color:var(--branch);}
   .q{
     background:var(--bg-card); border:1px solid var(--border); border-radius:10px;
     padding:18px 20px; margin-bottom:16px;
@@ -32,43 +33,54 @@
   .q ul{list-style:none; margin:0; padding:0; display:grid; gap:8px;}
   .q ul li{
     padding:9px 12px; border:1px solid var(--border); border-radius:7px;
-    background:#0d1220; font-size:.9rem; display:flex; gap:8px;
+    background:#0d1220; font-size:.9rem; display:flex; gap:8px; align-items:baseline;
   }
   .q ul li .letter{color:var(--text-dim); font-weight:700; min-width:1.2em;}
+  .q ul li .goto{margin-left:auto; color:var(--branch); font-size:.72rem; font-weight:700; white-space:nowrap;}
   table{width:100%; border-collapse:collapse; margin:16px 0; font-size:.85rem;}
   th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top;}
   th{color:var(--text-dim); font-weight:600; font-size:.78rem; text-transform:uppercase;}
   code{background:#0d1220; padding:2px 6px; border-radius:4px; font-size:.85em;}
+  .end{color:var(--branch); font-weight:700; font-size:.85rem;}
 </style>
 </head>
 <body>
 <div class="wrap">
   <a class="back" href="../../index.html">&larr; wróć do hub-a raportów</a>
-  <h1>Ankieta identyfikacji person</h1>
-  <p class="subtitle">Krótka ankieta (8 pytań, ~2 min) do rozpoznania, do której z 12 person North.pl pasuje respondent · 2026-07-23</p>
+  <h1>Ankieta identyfikacji person — v2</h1>
+  <p class="subtitle">Wersja z rozgałęzieniami (routing) — poprawiona po uwadze, że v1 była za ogólna i nakładały się wzorce · 2026-07-27</p>
 
-  <div class="callout">
-    <strong>Jak używać:</strong> Ankietę można wysłać mailowo do bazy klientów, dodać jako popup po zakupie, albo
-    wpleść w rozmowę na infolinii. Poniżej: (1) gotowa treść pytań do wklejenia w Typeform/Google Forms,
-    (2) klucz interpretacji — jak z odpowiedzi odczytać personę.
+  <div class="callout fix">
+    <strong>Co poprawiono względem v1:</strong> Stara wersja pytała ogólnie o kanał, wiek i priorytety — kilka person
+    (np. Rodzinka.pl i Kasia i Tomek, albo Złotopolscy i Seniorzy) dawało niemal identyczny wzorzec odpowiedzi.
+    Ta wersja najpierw <strong>odsiewa segmenty profesjonalne wprost</strong> (pytanie 0), a potem rozróżnia pozostałe
+    persony konkretnym pytaniem o <strong>sytuację życiową</strong> (pytanie 2) i <strong>stosunek do samodzielnej naprawy</strong>
+    (pytanie 3) — zamiast wnioskować to pośrednio z kanału zakupowego.
   </div>
 
-  <h2>Treść ankiety</h2>
-
+  <h2>Pytanie 0 — routing (zawsze pierwsze)</h2>
   <div class="q">
-    <span class="num">PYTANIE 1</span>
-    <p class="text">Jaki jest Twój obecny status mieszkaniowy?</p>
+    <span class="num">PYTANIE 0</span>
+    <p class="text">W czyim imieniu najczęściej kupujesz części lub sprzęt AGD/RTV na north.pl?</p>
     <ul>
-      <li><span class="letter">A</span> Mieszkam we własnym domu/mieszkaniu od dłuższego czasu</li>
-      <li><span class="letter">B</span> Wynajmuję mieszkanie albo niedawno się wprowadziłem/am do swojego</li>
-      <li><span class="letter">C</span> Zarządzam mieszkaniami/domami wynajmowanymi innym osobom</li>
-      <li><span class="letter">D</span> Kupuję w imieniu firmy lub instytucji (nie na własny użytek)</li>
+      <li><span class="letter">A</span> Na własny użytek, dla siebie lub domowników <span class="goto">→ idź do pytania 1</span></li>
+      <li><span class="letter">B</span> W imieniu serwisu/warsztatu naprawczego, w którym pracuję <span class="goto">→ tag: B2B, koniec</span></li>
+      <li><span class="letter">C</span> W imieniu instytucji publicznej (szkoła, urząd, dom opieki itp.) <span class="goto">→ tag: Budżetówka, koniec</span></li>
+      <li><span class="letter">D</span> Dla najemców lub gości w nieruchomościach, którymi zarządzam <span class="goto">→ tag: Wynajmujący/zarządcy, koniec</span></li>
+      <li><span class="letter">E</span> Kupuję uszkodzony/używany sprzęt, żeby go naprawić i sprzedać dalej <span class="goto">→ tag: Reseller/fliper, koniec</span></li>
     </ul>
   </div>
 
+  <div class="callout">
+    Odpowiedzi B–E kończą ankietę od razu — segmenty profesjonalne rozpoznaje się po <em>deklarowanym celu zakupu</em>,
+    nie po pośrednich sygnałach, więc dalsze pytania są dla nich zbędne. Tylko odpowiedź A prowadzi dalej.
+  </div>
+
+  <h2>Ścieżka konsumencka (tylko dla odpowiedzi 0A)</h2>
+
   <div class="q">
-    <span class="num">PYTANIE 2</span>
-    <p class="text">Do której grupy wiekowej należysz?</p>
+    <span class="num">PYTANIE 1</span>
+    <p class="text">Ile masz lat?</p>
     <ul>
       <li><span class="letter">A</span> 14–29 lat</li>
       <li><span class="letter">B</span> 30–45 lat</li>
@@ -78,54 +90,30 @@
   </div>
 
   <div class="q">
-    <span class="num">PYTANIE 3</span>
-    <p class="text">Kto zwykle naprawia sprzęt w Twoim domu, gdy się zepsuje?</p>
+    <span class="num">PYTANIE 2 — kluczowe rozróżnienie</span>
+    <p class="text">Który opis najlepiej pasuje do Twojej obecnej sytuacji domowej?</p>
     <ul>
-      <li><span class="letter">A</span> Ja sam/a — lubię to robić, sprawia mi satysfakcję</li>
-      <li><span class="letter">B</span> Ja, ale zależy mi żeby było jak najszybciej i najprościej</li>
-      <li><span class="letter">C</span> Ktoś z rodziny albo sąsiad mi pomaga / robi to za mnie</li>
-      <li><span class="letter">D</span> Zlecam to fachowcowi lub serwisowi</li>
-      <li><span class="letter">E</span> To część mojej pracy zawodowej (serwis/warsztat)</li>
+      <li><span class="letter">A</span> Mam dzieci w wieku szkolnym, prowadzimy aktywne, zabiegane życie <span class="goto">→ Rodzinka.pl</span></li>
+      <li><span class="letter">B</span> Dzieci już dorosłe/wyprowadzone, albo mieszkamy tak od lat — cenimy spokój i stabilizację <span class="goto">→ Złotopolscy</span></li>
+      <li><span class="letter">C</span> Młoda para lub single, dopiero urządzam/y swoje pierwsze miejsce, albo wynajmuję/emy <span class="goto">→ Kasia i Tomek</span></li>
+      <li><span class="letter">D</span> Mieszkam sam/a i w codziennych sprawach (też przy zamawianiu online) pomaga mi rodzina <span class="goto">→ Seniorzy niesamodzielni</span></li>
+      <li><span class="letter">E</span> Nie jestem obywatelem/obywatelką Polski, mieszkam tu i pracuję <span class="goto">→ Migranci i obcokrajowcy</span></li>
+    </ul>
+  </div>
+
+  <div class="q">
+    <span class="num">PYTANIE 3 — drugie kluczowe rozróżnienie</span>
+    <p class="text">Które zdanie najlepiej opisuje Twój stosunek do samodzielnej naprawy sprzętu?</p>
+    <ul>
+      <li><span class="letter">A</span> Naprawiam regularnie — także dla sąsiadów czy rodziny, trochę się na tym znam <span class="goto">→ Złote Rączki</span></li>
+      <li><span class="letter">B</span> Lubię naprawiać i chętnie pokazuję efekt w social media <span class="goto">→ Zetka-Twórczyni (jeśli 1A)</span></li>
+      <li><span class="letter">C</span> Naprawiam, jeśli to szybkie i proste — nie chcę na to poświęcać dużo czasu</li>
+      <li><span class="letter">D</span> Wolę, żeby ktoś inny to zrobił za mnie</li>
     </ul>
   </div>
 
   <div class="q">
     <span class="num">PYTANIE 4</span>
-    <p class="text">W jakim celu najczęściej kupujesz części lub sprzęt AGD/RTV?</p>
-    <ul>
-      <li><span class="letter">A</span> Do własnego domu, dla siebie lub rodziny</li>
-      <li><span class="letter">B</span> Dla najemcy albo gościa w wynajmowanym przeze mnie lokalu</li>
-      <li><span class="letter">C</span> Dla klientów mojego serwisu/warsztatu</li>
-      <li><span class="letter">D</span> Dla mojej placówki/instytucji (szkoła, urząd, dom opieki itp.)</li>
-      <li><span class="letter">E</span> Kupuję zepsuty/używany sprzęt, naprawiam i sprzedaję dalej</li>
-    </ul>
-  </div>
-
-  <div class="q">
-    <span class="num">PYTANIE 5</span>
-    <p class="text">Jak najczęściej robisz zakupy w North.pl?</p>
-    <ul>
-      <li><span class="letter">A</span> Z telefonu, szybko — czasem trafiam tam z social media</li>
-      <li><span class="letter">B</span> Z komputera, spokojnie, po namyśle</li>
-      <li><span class="letter">C</span> Dzwonię na infolinię — nie lubię zamawiać przez internet</li>
-      <li><span class="letter">D</span> Mam konto firmowe/hurtowe</li>
-    </ul>
-  </div>
-
-  <div class="q">
-    <span class="num">PYTANIE 6</span>
-    <p class="text">Co jest dla Ciebie najważniejsze przy zakupie części?</p>
-    <ul>
-      <li><span class="letter">A</span> Cena i oszczędność</li>
-      <li><span class="letter">B</span> Szybkość dostawy, najlepiej tego samego dnia</li>
-      <li><span class="letter">C</span> Możliwość samodzielnej naprawy i satysfakcja z tego</li>
-      <li><span class="letter">D</span> Faktura VAT i formalności zakupowe</li>
-      <li><span class="letter">E</span> Prostota i zaufanie — bez czytania długich instrukcji</li>
-    </ul>
-  </div>
-
-  <div class="q">
-    <span class="num">PYTANIE 7</span>
     <p class="text">Czy zdarza Ci się komentować porady na north.pl albo dzielić się doświadczeniem naprawy?</p>
     <ul>
       <li><span class="letter">A</span> Tak, chętnie podpowiadam innym z własnego doświadczenia</li>
@@ -134,41 +122,32 @@
     </ul>
   </div>
 
-  <div class="q">
-    <span class="num">PYTANIE 8</span>
-    <p class="text">W jakim języku najwygodniej się Tobie komunikować?</p>
-    <ul>
-      <li><span class="letter">A</span> Polski</li>
-      <li><span class="letter">B</span> Ukraiński</li>
-      <li><span class="letter">C</span> Angielski</li>
-      <li><span class="letter">D</span> Inny</li>
-    </ul>
-  </div>
-
-  <h2>Klucz interpretacji (dla zespołu, nie pokazywać respondentowi)</h2>
+  <h2>Klucz interpretacji</h2>
   <table>
-    <thead><tr><th>Persona</th><th>Typowy wzorzec odpowiedzi</th></tr></thead>
+    <thead><tr><th>Persona</th><th>Ścieżka</th></tr></thead>
     <tbody>
-      <tr><td>Rodzinka.pl</td><td>1A/1B · 2B · 3B · 4A · 5A/5B · 6B</td></tr>
-      <tr><td>Złotopolscy</td><td>1A · 2C/2D · 3D · 4A · 5B/5C · 6E</td></tr>
-      <tr><td>Kasia i Tomek</td><td>1B · 2B · 3A/3B · 4A · 5A · 6A/6C</td></tr>
-      <tr><td>Złote Rączki</td><td>1A · 2C/2D · 3A · 4A (lub 4C przy fachowcu) · 5B/5C · 6C · 7A</td></tr>
-      <tr><td>Zetki</td><td>1B · 2A · 3A/3B · 4A/4E · 5A · 6A/6C · (7A = podpersona Twórczyni/Twórca, 7C = Pragmatyczna)</td></tr>
-      <tr><td>Alfy</td><td>ankieta wypełniana przez rodzica w imieniu dziecka — nie adresować bezpośrednio</td></tr>
-      <tr><td>B2B</td><td>1D · 3E · 4C · 5D · 6B/6D</td></tr>
-      <tr><td>Budżetówka</td><td>1D · 4D · 6D</td></tr>
-      <tr><td>Wynajmujący / zarządcy nieruchomości</td><td>1C · 4B · 6B</td></tr>
-      <tr><td>Seniorzy niesamodzielni</td><td>2D · 3C/3D · 5C · 6E</td></tr>
-      <tr><td>Migranci i obcokrajowcy</td><td>1B · 8B/8C/8D · 6E</td></tr>
-      <tr><td>Resellerzy / fliperzy</td><td>4E · 6A · częstotliwość zakupów wysoka (dopytać osobno, jeśli ankieta idzie do bazy)</td></tr>
+      <tr><td>B2B</td><td>0B <span class="end">— koniec ankiety</span></td></tr>
+      <tr><td>Budżetówka</td><td>0C <span class="end">— koniec ankiety</span></td></tr>
+      <tr><td>Wynajmujący / zarządcy</td><td>0D <span class="end">— koniec ankiety</span></td></tr>
+      <tr><td>Resellerzy / fliperzy</td><td>0E <span class="end">— koniec ankiety</span></td></tr>
+      <tr><td>Rodzinka.pl</td><td>0A → 2A (+3C typowo)</td></tr>
+      <tr><td>Złotopolscy</td><td>0A → 2B (+3D typowo)</td></tr>
+      <tr><td>Kasia i Tomek</td><td>0A → 2C (+3C typowo)</td></tr>
+      <tr><td>Złote Rączki</td><td>0A → 2B/2C + 3A</td></tr>
+      <tr><td>Zetki</td><td>0A → 1A + 2C</td></tr>
+      <tr><td>— podpersona Twórczyni/Twórca</td><td>jw. + 3B + 4A</td></tr>
+      <tr><td>Seniorzy niesamodzielni</td><td>0A → 2D (niezależnie od wieku w Q1, choć zwykle 1D)</td></tr>
+      <tr><td>Migranci i obcokrajowcy</td><td>0A → 2E</td></tr>
+      <tr><td>Alfy</td><td>nie objęte ankietą — kontakt transakcyjny zawsze do rodzica, ankieta nie ma dla nich zastosowania</td></tr>
     </tbody>
   </table>
 
   <div class="callout">
-    <strong>Uwaga:</strong> Kilka wzorców się nakłada (np. Złote Rączki vs. Reseller, Rodzinka vs. Kasia i Tomek) —
-    tak jak w macierzy person, warto traktować wynik jako <em>najbardziej prawdopodobną personę</em>, a nie
-    jednoznaczną etykietę. Odpowiedzi z pytania 7 (aktywność w komentarzach) najlepiej zapisać w bazie jako osobne
-    pole <code>aktywnosc_w_komentarzach</code> — patrz raport <a href="03-tagowanie-person-w-bazie.html" style="color:var(--accent)">03 Jak tagować persony w bazie</a>.
+    <strong>Dlaczego to ostrzejsze niż v1:</strong> Pytanie 2 rozstrzyga sytuację domową jednym bezpośrednim pytaniem
+    zamiast wnioskować ją z kanału zakupowego (który bywa taki sam dla kilku person). Pytanie 3 osobno rozstrzyga
+    kompetencję/skłonność do DIY — jedyne miejsce, gdzie nadal jest niejednoznaczność, to rozróżnienie
+    Złote Rączki vs. Zetka-Twórczyni przy odpowiedzi 3A/3B — tu decyduje wiek z pytania 1, nie kanał.
+    Pełne pola do tagowania w bazie: <a href="03-tagowanie-person-w-bazie.html" style="color:var(--accent)">raport 03</a>.
   </div>
 </div>
 </body>
