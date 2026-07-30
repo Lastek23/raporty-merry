@@ -29,76 +29,82 @@
   }
   .scenario h3{margin:0 0 4px; font-size:1.05rem;}
   .scenario .kiedy{color:var(--text-dim); font-size:.82rem; margin-bottom:14px;}
-  .line{
+  .say{
     background:#0d1220; border:1px solid var(--border); border-radius:8px;
-    padding:10px 14px; margin:8px 0; font-size:.9rem;
+    padding:10px 14px; margin:8px 0; font-size:.9rem; font-style:italic;
   }
-  .line b{color:var(--accent); display:block; font-size:.72rem; text-transform:uppercase; margin-bottom:3px;}
+  .listen{font-size:.88rem; margin:10px 0 0;}
+  .listen b{font-style:normal; color:var(--text-dim); font-size:.75rem; text-transform:uppercase; display:block; margin-bottom:4px;}
   table{width:100%; border-collapse:collapse; margin:16px 0; font-size:.84rem;}
   th,td{text-align:left; padding:9px 11px; border-bottom:1px solid var(--border); vertical-align:top;}
   th{color:var(--text-dim); font-weight:600; font-size:.76rem; text-transform:uppercase;}
-  code{background:#0d1220; padding:2px 6px; border-radius:4px; font-size:.85em;}
 </style>
 </head>
 <body>
 <div class="wrap">
   <a class="back" href="../../index.html">&larr; wróć do hub-a raportów</a>
   <h1>Rozpoznanie persony w 10 sekund</h1>
-  <p class="subtitle">Skrypt dla konsultanta infolinii — 2-3 pytania wplecione naturalnie w rozmowę, nie ankieta · 2026-07-28</p>
+  <p class="subtitle">Nie skrypt — jedna naturalna rzecz do powiedzenia + na co zwrócić uwagę w odpowiedzi · v3, 2026-07-29</p>
 
   <div class="callout">
-    <strong>Zasada:</strong> To nie jest lista pytań do odczytania. Wpleć je w naturalny tok rozmowy — tak jak
-    pytałbyś/pytałabyś znajomego. Cel: po 2-3 zdaniach wiesz, czy mówisz z kimś zabieganym (przejdź do konkretów),
-    doświadczonym (nie ucz, tylko potwierdzaj) czy niepewnym (zwolnij, uspokój). Pełne opisy person:
-    <a href="../branding-komunikacji/05-sciaga-persony.html" style="color:var(--accent)">ściąga 12 person</a>.
+    <strong>Punkt wyjścia jest inny niż w v2:</strong> konsultant nie ma "zbierać sygnałów" pytaniami — ma po prostu
+    dobrze pomóc. Rozpoznanie persony jest efektem ubocznym jednej, szczerze pomocnej uwagi, nie serią pytań
+    kontrolnych. Większość segmentów profesjonalnych (B2B, urząd, wynajem, reseller) i tak ujawnia się sama —
+    przy fakturze VAT, adresie dostawy czy liczbie sztuk — nie trzeba o to dopytywać osobno.
   </div>
 
   <h2>Scenariusz 1 — klient dzwoni po część</h2>
   <div class="scenario">
-    <div class="kiedy">Kiedy: klient inicjuje rozmowę, szuka konkretnej części</div>
-    <div class="line"><b>Pytanie 1 (po ustaleniu sprzętu)</b>„A to Pan/Pani sam/a zamontuje, czy ktoś pomoże?"</div>
-    <div class="line"><b>Pytanie 2</b>„Do własnego mieszkania, czy może w czyimś imieniu — serwis, wynajem, urząd?"</div>
-    <div class="line"><b>Pytanie 3 (tylko jeśli niejasne)</b>„Pali się to, czy ma Pan/Pani chwilę, żeby się przygotować?"</div>
+    <div class="kiedy">Kiedy: klient sam dzwoni, szuka konkretnej części</div>
+    <p>Zamiast pytać o cokolwiek "na sondę", powiedz to, co i tak powiedziałbyś/powiedziałabyś, żeby dobrze doradzić:</p>
+    <div class="say">„Mogę Panu/Pani w dwóch słowach podpowiedzieć, jak to się wymienia — czy orientuje się Pan/Pani już, jak to zrobić?"</div>
+    <div class="listen">
+      <b>Na co zwrócić uwagę w odpowiedzi</b>
+      „Sam se poradzę, robiłem/am to już" — pewny, rzeczowy ton → <strong>Złote Rączki</strong> lub <strong>B2B/Reseller</strong>, jeśli mówi o wielu sztukach/klientach. Nie tłumacz podstaw, pytaj wprost o model.<br><br>
+      „Właściwie to nie wiem, proszę powiedzieć" — spokojny, ale zainteresowany → <strong>Rodzinka.pl / Kasia i Tomek / Zetki</strong> (w zależności od tempa rozmowy i tego, czy się spieszy). Krótko, konkretnie, bez pouczania.<br><br>
+      Wahanie, pytania o to, czy na pewno się uda, prośba o dokładne tłumaczenie — → <strong>Złotopolscy / Seniorzy niesamodzielni</strong>. Zwolnij, zaproponuj usługę montażu, nie naciskaj na DIY.<br><br>
+      Segmenty profesjonalne (B2B, Budżetówka, Wynajmujący, Reseller) zwykle <strong>ujawniają się same</strong> — przy pytaniu o fakturę, adres dostawy, ilość sztuk. Nie trzeba o to pytać osobno.
+    </div>
   </div>
 
   <h2>Scenariusz 2 — proaktywny telefon, klient czeka na paczkę</h2>
   <div class="scenario">
-    <div class="kiedy">Kiedy: dzwonimy sami, sprawdzić czy klient poradzi sobie z naprawą (link do artykułu w bazie porad + kanał YT)</div>
-    <div class="line"><b>Otwarcie</b>„Dzień dobry, dzwonię z North.pl w sprawie zamówienia na [część] — chciałem/am tylko zapytać, czy widział/a Pan/Pani nasz poradnik do tej naprawy? Mamy artykuł i krótki film."</div>
-    <div class="line"><b>Pytanie 1</b>„Robi Pan/Pani taką naprawę pierwszy raz, czy już to Panu/Pani znane?"</div>
-    <div class="line"><b>Pytanie 2</b>„Woli Pan/Pani obejrzeć film krok po kroku, czy wolałby Pan/Pani, żebyśmy zorganizowali komuś montaż?"</div>
+    <div class="kiedy">Kiedy: dzwonimy sami, żeby sprawdzić czy klient poradzi sobie z naprawą (link do artykułu w bazie porad + kanał YT)</div>
+    <p>Cel tego telefonu i tak jest pomocowy, więc nie trzeba niczego udawać — powiedz to wprost:</p>
+    <div class="say">„Dzień dobry, dzwonię, bo widzę że czeka Pan/Pani na [część] do [sprzęt] — chciałem/am się tylko upewnić, że wszystko będzie jasne, zanim to dotrze. Robił/a Pan/Pani już taką naprawę?"</div>
+    <div class="listen">
+      <b>Na co zwrócić uwagę w odpowiedzi</b>
+      „Tak, już to znam" / szybka, pewna odpowiedź → <strong>Złote Rączki / Zetki / Kasia i Tomek</strong>. Podziękuj, zakończ krótko — nie potrzebują niczego więcej.<br><br>
+      „Nie, pierwszy raz, ale spróbuję" → warto <em>samemu z siebie</em> zaproponować: „to podeślę film, jest krótki i pokazuje krok po kroku" — jeśli klient chętnie na to reaguje, to raczej <strong>Zetki/Kasia i Tomek</strong>; jeśli mimo filmu brzmi na niepewnego, dopytaj czy nie wolałby, żeby ktoś to zamontował — to już <strong>Złotopolscy/Seniorzy</strong>.
+    </div>
   </div>
 
   <h2>Scenariusz 3 — po dostawie, pytamy jak poszła naprawa</h2>
   <div class="scenario">
     <div class="kiedy">Kiedy: follow-up po dostarczeniu paczki</div>
-    <div class="line"><b>Otwarcie</b>„Dzień dobry, dzwonię zapytać czy naprawa [sprzętu] się udała?"</div>
-    <div class="line"><b>Jeśli TAK</b>„Super! To pierwszy raz, czy ma Pan/Pani już w tym wprawę?"</div>
-    <div class="line"><b>Jeśli TAK + brzmi na doświadczonego/aktywnego</b>„Chętnie pokazuje Pan/Pani takie rzeczy znajomym albo w sieci?" <em>(sygnał pod program ambasadorski)</em></div>
-    <div class="line"><b>Jeśli NIE</b>„Co się nie udało — mogę pomóc znaleźć krok, na którym utknęło?"</div>
+    <div class="say">„Dzień dobry, dzwonię zapytać, czy naprawa [sprzętu] się udała?"</div>
+    <div class="listen">
+      <b>Na co zwrócić uwagę w odpowiedzi</b>
+      Jeśli klient <em>sam z siebie</em> opowiada z entuzjazmem, jak mu poszło, chwali się efektem albo mówi że pokazywał
+      to komuś — to naturalny moment, żeby zapytać, czy chciałby się tym podzielić szerzej (program ambasadorski).
+      Nie trzeba tego pytać każdemu, kto powie „tak, udało się" — tylko tym, którzy sami wnoszą ten wątek.<br><br>
+      Jeśli mówi krótko „tak, udało się" bez entuzjazmu → podziękuj i zakończ, nie ciągnij rozmowy na siłę.<br><br>
+      Jeśli „nie udało się" → od razu pytaj, na którym kroku utknął/ęła, nie pytaj o nic więcej dopóki problem nie jest rozwiązany.
+    </div>
   </div>
 
-  <h2>Szybki dekoder — co usłyszysz → z kim rozmawiasz → jak dalej prowadzić</h2>
+  <h2>Skrócona tabela — dla szybkiego zerknięcia w trakcie rozmowy</h2>
   <table>
-    <thead><tr><th>Co mówi klient</th><th>Prawdopodobna persona</th><th>Jak dalej prowadzić rozmowę</th></tr></thead>
+    <thead><tr><th>Co słyszysz</th><th>Prawdopodobnie</th><th>Jak prowadzić dalej</th></tr></thead>
     <tbody>
-      <tr><td>„Sam/a zrobię, tylko szybko" + w domu</td><td>Rodzinka.pl / Kasia i Tomek</td><td>Konkrety, bez owijania — od razu najszybsza opcja</td></tr>
-      <tr><td>„Wolę, żeby ktoś to zrobił" + starszy głos, ostrożny ton</td><td>Złotopolscy / Seniorzy niesamodzielni</td><td>Zwolnij tempo, zaproponuj usługę montażu, nie naciskaj na DIY</td></tr>
-      <tr><td>„Robię to regularnie, też sąsiadom pomagam"</td><td>Złote Rączki</td><td>Nie tłumacz podstaw — pytaj o model, dawaj info fachowe wprost</td></tr>
-      <tr><td>„Pierwszy raz, ale chętnie spróbuję" + młody głos</td><td>Zetki / Kasia i Tomek</td><td>Zaproponuj wideo-instrukcję, luźny ton, bez pouczania</td></tr>
-      <tr><td>„To dla serwisu/warsztatu" / „zamawiam więcej naraz"</td><td>B2B</td><td>Od razu przejdź do numeru części, ilości, terminu — bez narracji marki</td></tr>
-      <tr><td>„To dla mieszkania na wynajem, gość czeka"</td><td>Wynajmujący/zarządcy</td><td>Zapytaj czy pilne, zaproponuj najszybszą dostawę</td></tr>
-      <tr><td>„W imieniu szkoły/urzędu, potrzebuję faktury"</td><td>Budżetówka</td><td>Pytaj o rodzaj dokumentacji i termin budżetowy</td></tr>
-      <tr><td>„Kupuję takie sprzęty regularnie do naprawy i sprzedaży"</td><td>Resellerzy/fliperzy</td><td>Zapytaj o skalę (ile miesięcznie) — zaproponuj rabat ilościowy</td></tr>
-      <tr><td>Bariera językowa / akcent</td><td>Migranci i obcokrajowcy</td><td>Zaproponuj wersję instrukcji po ukraińsku/angielsku, mów wolniej i prościej</td></tr>
+      <tr><td>Pewny ton, „sam sobie poradzę"</td><td>Złote Rączki / Zetki</td><td>Konkrety wprost, bez tłumaczenia podstaw</td></tr>
+      <tr><td>Niepewny, prosi o dokładne wyjaśnienie</td><td>Złotopolscy / Seniorzy</td><td>Zwolnij, zaproponuj montaż zamiast DIY</td></tr>
+      <tr><td>Pyta o fakturę VAT / większą ilość</td><td>B2B / Budżetówka / Reseller</td><td>Przejdź do konkretów handlowych, bez narracji marki</td></tr>
+      <tr><td>Mówi że to dla najemcy/gościa, presja czasu</td><td>Wynajmujący/zarządcy</td><td>Zapytaj o pilność, zaproponuj najszybszą dostawę</td></tr>
+      <tr><td>Bariera językowa</td><td>Migranci i obcokrajowcy</td><td>Zaproponuj instrukcję po ukraińsku/angielsku, mów wolniej</td></tr>
+      <tr><td>Sam z siebie chwali się efektem naprawy</td><td>Potencjalny ambasador</td><td>Zapytaj, czy chce się podzielić szerzej — nie na siłę</td></tr>
     </tbody>
   </table>
-
-  <div class="callout">
-    <strong>Uwaga:</strong> Te pytania nie muszą paść w tej kolejności ani dosłownym brzmieniu — chodzi o to, żeby
-    konsultant naturalnie zebrał te same 2-3 sygnały (kto naprawia, dla kogo, jak pilne) niezależnie od tego, jak
-    potoczy się rozmowa. Pełne wzorce tonu per persona — patrz <a href="../branding-komunikacji/05-sciaga-persony.html" style="color:var(--accent)">ściąga 12 person</a>.
-  </div>
 </div>
 </body>
 </html>
