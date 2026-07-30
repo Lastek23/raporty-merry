@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log rzeczywistych rozmów — Raporty Merry</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&subset=latin-ext" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1420; --bg-card:#161d2e; --border:#26304a;
+    --text:#e7ebf5; --text-dim:#93a0bd; --accent:#5b8cff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:'Roboto',-apple-system,Segoe UI,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:40px 24px 80px;}
+  a.back{color:var(--accent); text-decoration:none; font-size:.9rem;}
+  h1{font-size:1.6rem; margin:24px 0 4px;}
+  .subtitle{color:var(--text-dim); margin:0 0 32px;}
+  h2{font-size:1.15rem; margin-top:44px; border-bottom:1px solid var(--border); padding-bottom:8px;}
+  .callout{
+    background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent);
+    border-radius:8px; padding:16px 20px; margin:20px 0; font-size:.92rem;
+  }
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:.83rem;}
+  th,td{text-align:left; padding:9px 11px; border-bottom:1px solid var(--border); vertical-align:top;}
+  th{color:var(--text-dim); font-weight:600; font-size:.74rem; text-transform:uppercase;}
+  .finding{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:10px;
+    padding:16px 20px; margin-bottom:14px;
+  }
+  .finding h3{margin:0 0 6px; font-size:1rem;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">&larr; wróć do hub-a raportów</a>
+  <h1>Log rzeczywistych rozmów</h1>
+  <p class="subtitle">10 odsłuchanych połączeń — walidacja rozpoznawania person w praktyce · zapisywane na bieżąco, zacznięte 2026-07-31</p>
+
+  <div class="callout">
+    Cel: sprawdzić, czy sygnały opisane w <a href="03-rozpoznanie-persony-10-sek.html" style="color:var(--accent)">Rozpoznaniu persony w 10 sek</a>
+    i w <a href="../branding-komunikacji/05-sciaga-persony.html" style="color:var(--accent)">Ściądze 12 person</a> faktycznie
+    pojawiają się w realnych rozmowach — i złapać wzorce, których tam jeszcze nie ma.
+  </div>
+
+  <h2>Odsłuchane rozmowy</h2>
+  <table>
+    <thead><tr><th>#</th><th>Kontekst / urządzenie</th><th>Co zaobserwowano</th><th>Persona</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Tarka do ziemniaków</td><td>Konsultant rozpoznał osobę starszą, zaproponował płatność za pobraniem</td><td>Seniorzy / Złotopolscy</td></tr>
+      <tr><td>2</td><td>—</td><td>Dzwoniący przedstawił się jako serwisant już na "dzień dobry"</td><td>B2B</td></tr>
+      <tr><td>3</td><td>—</td><td>Klient zamawia na różne adresy</td><td>Wynajmujący/zarządcy</td></tr>
+      <tr><td>4</td><td>Tabliczka znamionowa</td><td>Dzwoni drugi raz, nie mógł znaleźć numeru z tabliczki. Naprawia sam, wiek 35-40, chyba pierwszy raz</td><td>Kasia i Tomek / Rodzinka.pl</td></tr>
+      <tr><td>5</td><td>Nakrętka na gwincie</td><td>Brak nakrętki, jest na zdjęciu. Starszy, ale zna kierunek gwintu — techniczna pewność mimo wieku</td><td>Złote Rączki</td></tr>
+      <tr><td>6</td><td>Zmywarka</td><td>50 lat, zna model, "kumaty", jest na stronie north.pl podczas rozmowy</td><td>Złote Rączki</td></tr>
+      <tr><td>7</td><td>Zawias</td><td>Starszy, robi usługę dla klienta z Niemiec, nie ma modelu urządzenia, opisuje konsultantowi jak działa. Kontakt do działu DOS</td><td>Złote Rączki — Mikroprzedsiębiorca/Fachowiec (wątek eksportowy — nowy sygnał)</td></tr>
+      <tr><td>8</td><td>Szuflada do zamrażarki</td><td>40 lat, zna model, kumaty — ale zamawia dla mamy, pierwsze zakupy w North.pl</td><td>Pośrednik zakupowy dla rodzica (nowy wzorzec — patrz niżej)</td></tr>
+      <tr><td>9</td><td>Brak paczki</td><td>Starsza kobieta, pyta czy paczka wyszła — nie wyszła, rozgoryczona, czeka na SMS z informacją zwrotną</td><td>Seniorzy — sygnał posprzedażowy, nie DIY</td></tr>
+      <tr><td>10</td><td>Zamówienie bez modelu</td><td>Starszy, próbuje naprawić, potrzebuje pomocy. Zamówił bez sprawdzenia modelu — konsultant kieruje na tabliczkę znamionową, klient zamawia prawidłową część</td><td>Seniorzy / Złotopolscy</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Wnioski — co koryguje albo uzupełnia nasz model person</h2>
+
+  <div class="finding">
+    <h3>1. Wiek nie przewiduje kompetencji DIY</h3>
+    <p>Rozmowy 5, 6 i 10 to wszystko starsi rozmówcy — ale 5 i 6 są technicznie bardzo pewni (znają kierunek gwintu,
+    przeglądają stronę w trakcie rozmowy), a 10 potrzebuje prowadzenia krok po kroku. To potwierdza to, co już było
+    w <a href="03-rozpoznanie-persony-10-sek.html" style="color:var(--accent)">skrypcie konsultanta</a>: liczy się
+    <strong>ton i pewność w odpowiedzi</strong>, nie wiek rozmówcy. Warto to podkreślić w szkoleniu konsultantów —
+    łatwo o błędne założenie "starszy głos = Senior niesamodzielny".</p>
+  </div>
+
+  <div class="finding">
+    <h3>2. Tabliczka znamionowa to powtarzający się problem operacyjny</h3>
+    <p>Rozmowy 4 i 10 — klienci nie potrafią znaleźć albo odczytać numeru z tabliczki znamionowej, niezależnie od
+    wieku czy kompetencji. To nie jest sygnał persony, tylko realna przeszkoda w całej bazie klientów.
+    <strong>Warto rozważyć osobny materiał</strong> (grafika/wideo "jak znaleźć tabliczkę znamionową" — do zrobienia
+    z Tomkiem) i dopisać do listy najczęstszych pytań na infolinii.</p>
+  </div>
+
+  <div class="finding">
+    <h3>3. Nowy wzorzec: dorosłe dziecko kupuje dla starszego rodzica</h3>
+    <p>Rozmowa 8 — 40-letni, technicznie kompetentny rozmówca, ale zamawia część dla mamy, pierwsze zakupy w North.pl.
+    To inny przypadek niż <strong>Seniorzy niesamodzielni</strong> (tam senior jest obecny przy rozmowie i ktoś mu pomaga)
+    — tutaj senior może nawet nie wiedzieć o zamówieniu. Persony 2026 nie mają wprost takiego segmentu: kompetentny
+    dorosły kupujący prewencyjnie/serwisowo dla rodzica. Wart rozważenia jako <strong>podpersona Rodzinki.pl/Kasi i Tomka</strong>
+    albo nowy, mniejszy segment — do przedyskutowania przy najbliższym przeglądzie person (patrz raport 09, cykl życia dokumentu).</p>
+  </div>
+
+  <div class="finding">
+    <h3>4. Wątek eksportowy/cross-border w B2B</h3>
+    <p>Rozmowa 7 — fachowiec robiący usługę dla klienta z Niemiec. Obecna persona B2B/Złote Rączki-Fachowiec nie
+    wspomina o kliencie zagranicznym jako end-userze. Nie wiadomo, czy to pojedynczy przypadek czy powtarzający się
+    wzorzec (np. fachowcy blisko granicy obsługujący klientów z Niemiec) — warto to obserwować w kolejnych rozmowach
+    zanim wyciągnie się dalej idące wnioski.</p>
+  </div>
+
+  <div class="finding">
+    <h3>5. Seniorzy chcą proaktywnego SMS-a o statusie przesyłki</h3>
+    <p>Rozmowa 9 — rozgoryczenie wynika głównie z braku informacji, nie z samego opóźnienia. Pasuje do
+    <a href="07-sciezka-posprzedazowa.html" style="color:var(--accent)">raportu 07 (ścieżka posprzedażowa)</a> — dla
+    tej persony proaktywny SMS o statusie wysyłki (zanim klient sam zadzwoni zapytać) może być ważniejszy niż dla
+    młodszych, cyfrowo pewniejszych segmentów.</p>
+  </div>
+</div>
+</body>
+</html>
