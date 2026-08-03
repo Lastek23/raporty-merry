@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scenariusz: brak części w magazynie — Raporty Merry</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&subset=latin-ext" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1420; --bg-card:#161d2e; --border:#26304a;
+    --text:#e7ebf5; --text-dim:#93a0bd; --accent:#5b8cff;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:'Roboto',-apple-system,Segoe UI,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:40px 24px 80px;}
+  a.back{color:var(--accent); text-decoration:none; font-size:.9rem;}
+  h1{font-size:1.6rem; margin:24px 0 4px;}
+  .subtitle{color:var(--text-dim); margin:0 0 28px;}
+  h2{font-size:1.15rem; margin-top:44px; border-bottom:1px solid var(--border); padding-bottom:8px;}
+  .callout{
+    background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent);
+    border-radius:8px; padding:16px 20px; margin:20px 0; font-size:.92rem;
+  }
+  .diagram{
+    width:100%; border-radius:10px; border:1px solid var(--border); margin:16px 0;
+  }
+  .step{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:10px;
+    padding:18px 22px; margin-bottom:16px;
+  }
+  .step h3{margin:0 0 4px; font-size:1.05rem;}
+  .step .sla{color:var(--text-dim); font-size:.82rem; margin-bottom:12px;}
+  .msg{
+    background:#0d1220; border:1px solid var(--border); border-radius:8px;
+    padding:12px 16px; margin:10px 0; font-size:.88rem;
+  }
+  .msg b{color:var(--accent); display:block; font-size:.72rem; text-transform:uppercase; margin-bottom:4px;}
+  ul.reasons{padding-left:20px;}
+  ul.reasons li{margin-bottom:8px; font-size:.92rem;}
+  code{background:#0d1220; padding:2px 6px; border-radius:4px; font-size:.85em;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">&larr; wróć do hub-a raportów</a>
+  <h1>Scenariusz: brak części w magazynie</h1>
+  <p class="subtitle">Przebieg i czasy reakcji — obsługa klienta przy braku części · scenariusz obsługi klienta</p>
+
+  <div class="callout">
+    Oryginalny plik: <a href="pliki/01-scenariusz-brak-czesci.docx" style="color:var(--accent)">DOCX do pobrania</a>
+  </div>
+
+  <h2>Diagram przepływu</h2>
+  <img class="diagram" src="obrazy/01-diagram-przeplywu.png" alt="Diagram przepływu obsługi klienta przy braku części w magazynie">
+
+  <h2>Krok 1 — status w aplikacji (bez maila)</h2>
+  <div class="step">
+    <p>Klient widzi to od razu na ekranie, po kliknięciu „Dalej" — nie wysyłamy osobnego maila ani SMS-a na tym
+    etapie, bo nic konkretnego jeszcze nie wiemy:</p>
+    <div class="msg">Sprawdzamy to dla Ciebie. Damy znać do 2h roboczych (pon–pt 8–18) z konkretną odpowiedzią.</div>
+  </div>
+
+  <h2>Krok 2 — jedyna, konkretna wiadomość</h2>
+  <div class="step">
+    <div class="sla">SLA: 2h robocze, docelowo 30–60 min</div>
+    <p>To jedyny mail/SMS, jaki klient dostaje na tym etapie — od razu z pełną informacją i opcjami do wyboru.</p>
+
+    <h3>Wariant A — jest zamiennik</h3>
+    <div class="msg">
+      Cześć [imię],<br><br>
+      sprawdziliśmy [nazwa] do [producent] [model] — tej konkretnej części akurat nie mamy, ale przejrzeliśmy
+      3 dostawców i bazę zamienników, więc mamy dla Ciebie kilka opcji:
+      <ul>
+        <li>Zamiennik, który pasuje 1:1 do Twojego urządzenia [nazwa + różnica cenowa, jeśli jest].</li>
+        <li>Zamówienie u dostawcy zewnętrznego — ok. [X dni roboczych].</li>
+        <li>Wolisz pogadać? Oddzwonimy i pomożemy dobrać rozwiązanie.</li>
+      </ul>
+      Napisz, co wybierasz, a resztą zajmiemy się my.<br>
+      [Imię], [firma]
+    </div>
+
+    <h3>Wariant B — nie ma ani części, ani zamiennika</h3>
+    <div class="msg">
+      Cześć [imię],<br><br>
+      sprawdziliśmy wszystko, co mogliśmy — 3 dostawców i bazę zamienników — i [nazwa] do [producent] [model]
+      po prostu teraz nigdzie nie ma. Nie zostawiamy Cię z tym samego:
+      <ul>
+        <li>Zgłaszamy Cię na listę alarmową — odezwiemy się, jak tylko część się pojawi (zwykle [X dni/tygodni]).</li>
+        <li>Możemy sprawdzić inne rozwiązanie — np. część z demontażu albo inny pasujący producent. Oddzwoni nasz specjalista.</li>
+        <li>Jeśli naprawa przestaje się opłacać, pomożemy dobrać nowy sprzęt.</li>
+      </ul>
+      [Imię], [firma]
+    </div>
+  </div>
+
+  <h2>Krok 3 — tylko gdy jest nowość</h2>
+  <div class="step">
+    <div class="sla">SLA: event-driven — bez cyklicznych przypomnień o niczym</div>
+    <p>Koniec ze sztywnym harmonogramem (24h / co 7 dni). Piszemy do klienta wyłącznie wtedy, gdy naprawdę coś
+    się zmieniło: część się znalazła, dostawca podał nowy termin, albo klient długo nie odpowiada.</p>
+    <div class="msg">Hej, wciąż pilnujemy Twojej sprawy. Jak któraś opcja Ci pasuje, daj znać — albo zadzwoń, chętnie pomożemy: [numer].</div>
+  </div>
+
+  <h2>Dlaczego tak</h2>
+  <ul class="reasons">
+    <li><strong>Mniej wiadomości</strong> — piszemy tylko wtedy, gdy mamy coś konkretnego do przekazania, żeby klient nie czuł się zasypywany.</li>
+    <li><strong>Ludzki, luźniejszy język</strong> zamiast sztywnego skryptu — krótsze zdania, brzmi jak wiadomość od człowieka, nie od systemu.</li>
+    <li><strong>Ton pokazuje wysiłek</strong> („sprawdziliśmy u 3 dostawców") zamiast suchego „brak na stanie" — to buduje poczucie opieki.</li>
+    <li><strong>Zawsze konkretne opcje</strong>, nigdy sama odmowa — klient nie zostaje z niczym.</li>
+    <li><strong>Podpis z imienia</strong> — personalizacja, nie „system".</li>
+  </ul>
+</div>
+</body>
+</html>
