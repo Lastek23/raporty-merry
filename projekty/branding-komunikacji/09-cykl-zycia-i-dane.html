@@ -48,6 +48,15 @@
     </tbody>
   </table>
 
+  <div class="callout">
+    <strong>Przykład tej rewizji w praktyce (2026-08-01):</strong> po przesłuchaniu ponad 40 realnych rozmów CC/CX
+    (patrz <a href="../north-szablony-cx/04-log-rzeczywistych-rozmow.html" style="color:var(--accent)">log rozmów</a>)
+    okazało się, że 12 person było za dużo — kilka nie różnicowało się w praktyce. Persony skonsolidowano do 7
+    (<a href="01-persony-2026.html" style="color:var(--accent)">Persony 2026 v2</a>): Alfy i Migranci wypadły,
+    Seniorzy weszli do Złotopolskich, Reseller i Wynajmujący do B2B jako podpersony. To dokładnie przykład triggera
+    „duża zmiana w danych" z tabeli powyżej — tylko że dane pochodziły z rozmów telefonicznych, nie z GSC/GA4.
+  </div>
+
   <h2>1–2. Waga person i KPI — czego brakuje i jak to policzyć</h2>
   <div class="callout">
     <strong>Nie mam dostępu do realnych danych sprzedażowych/CRM North.pl</strong>, więc nie mogę podać tu prawdziwych
@@ -60,8 +69,8 @@
       <tr><td>% klientów per persona</td><td>Baza zamówień + tagi z raportu 03</td><td><code>COUNT(klienci) GROUP BY tag_persony / COUNT(wszyscy klienci)</code></td></tr>
       <tr><td>% przychodu per persona</td><td>jw. + wartość zamówień</td><td><code>SUM(wartość_zamówień) GROUP BY tag_persony / SUM(cały przychód)</code></td></tr>
       <tr><td>KPI: Rodzinka.pl, Kasia i Tomek, Zetki</td><td>GA4 + zamówienia</td><td>Częstość powrotu na stronę, czas do zakupu, CTR z social/mobile</td></tr>
-      <tr><td>KPI: Złotopolscy, Złote Rączki, Seniorzy</td><td>Infolinia (CRM połączeń)</td><td>Czas rozmowy do finalizacji, % zamówień domkniętych telefonicznie</td></tr>
-      <tr><td>KPI: B2B, Budżetówka, Wynajmujący</td><td>Konta firmowe/instytucjonalne</td><td>Wartość zamówienia (AOV), częstotliwość, czas realizacji faktury</td></tr>
+      <tr><td>KPI: Złotopolscy (oba bieguny), Złote Rączki</td><td>Infolinia (CRM połączeń)</td><td>Czas rozmowy do finalizacji, % zamówień domkniętych telefonicznie</td></tr>
+      <tr><td>KPI: B2B (w tym podpersony Wynajmujący, Reseller), Budżetówka</td><td>Konta firmowe/instytucjonalne</td><td>Wartość zamówienia (AOV), częstotliwość, czas realizacji faktury</td></tr>
       <tr><td>KPI: Zetki-Twórczyni, Złote Rączki-Ekspert</td><td>Moduł komentarzy + program ambasadorski</td><td>Liczba UGC/porad dodanych, zasięg udostępnień</td></tr>
     </tbody>
   </table>
