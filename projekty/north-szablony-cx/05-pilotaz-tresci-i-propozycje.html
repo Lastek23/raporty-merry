@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilotaż: treść i propozycje — Raporty Merry</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&subset=latin-ext" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1420; --bg-card:#161d2e; --border:#26304a;
+    --text:#e7ebf5; --text-dim:#93a0bd; --accent:#5b8cff;
+    --good:#22c55e; --warn:#eab308;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:'Roboto',-apple-system,Segoe UI,Arial,sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:40px 24px 80px;}
+  a.back{color:var(--accent); text-decoration:none; font-size:.9rem;}
+  h1{font-size:1.6rem; margin:24px 0 4px;}
+  .subtitle{color:var(--text-dim); margin:0 0 24px;}
+  h2{font-size:1.15rem; margin-top:44px; border-bottom:1px solid var(--border); padding-bottom:8px;}
+  .callout{
+    background:var(--bg-card); border:1px solid var(--border); border-left:3px solid var(--accent);
+    border-radius:8px; padding:16px 20px; margin:20px 0; font-size:.92rem;
+  }
+  .tpl{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:10px;
+    padding:18px 22px; margin-bottom:16px;
+  }
+  .tpl h3{margin:0 0 4px; font-size:1.02rem;}
+  .tpl .meta{color:var(--text-dim); font-size:.78rem; margin-bottom:12px;}
+  .tpl .meta code{background:#0d1220; padding:1px 5px; border-radius:4px;}
+  .col{
+    background:#0d1220; border:1px solid var(--border); border-radius:8px;
+    padding:12px 16px; margin:8px 0; font-size:.88rem; white-space:pre-wrap;
+  }
+  .col b{color:var(--text-dim); display:block; font-size:.7rem; text-transform:uppercase; margin-bottom:6px; letter-spacing:.03em;}
+  .col.new b{color:var(--good);}
+  .col.flag{border-left:3px solid var(--warn);}
+  .col.flag b{color:var(--warn);}
+  .col.ok{border-left:3px solid var(--good);}
+  .badge{
+    display:inline-block; font-size:.68rem; font-weight:700; padding:2px 9px;
+    border-radius:999px; text-transform:uppercase; margin-left:8px;
+  }
+  .badge.new{background:#2a2410; color:var(--warn); border:1px solid #4a3d1d;}
+  .badge.ok{background:#0f2a1c; color:var(--good); border:1px solid #1d4a30;}
+  .badge.flag{background:#2a1010; color:#f87171; border:1px solid #4a1d1d;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="../../index.html">&larr; wróć do hub-a raportów</a>
+  <h1>Pilotaż: treść szablonów i propozycje poprawy</h1>
+  <p class="subtitle">13 reprezentatywnych szablonów z tao.north.pl (różne procesy) — oryginalna treść + propozycja wg zasad tonu · 2026-08-05</p>
+
+  <div class="callout">
+    <strong>Zasady tonu, na których oparte są propozycje</strong> (arkusz "Zasady tonu" ze starej inwentaryzacji):
+    lekki ton bez korpo-nowomowy, ale profesjonalny · pisz prosto, skracaj gdzie się da · nie zaczynaj każdego maila
+    od "Dzień dobry" i nie kończ każdego "Pozdrawiam" · zawsze proponuj alternatywę, nie zostawiaj klienta bez wyjścia ·
+    podpis tylko z imienia, bez stanowiska.<br><br>
+    <strong>Legenda:</strong>
+    <span class="badge ok">już dobry</span> nie wymaga zmian &nbsp;
+    <span class="badge new">propozycja</span> konkretna nowa wersja &nbsp;
+    <span class="badge flag">do wyjaśnienia</span> kontekst niejasny, nie zgaduję
+  </div>
+
+  <h2>1. "potwierdzenie zamówienia" <span class="badge new">propozycja</span></h2>
+  <div class="tpl">
+    <div class="meta">Dział: DH · Kontekst: <code>Brak</code> · Proces: <code>Brak</code> · Temat: (brak)</div>
+    <div class="col"><b>Oryginał</b>Dzień dobry,
+zamówienie zostało złożone. Proforma została wysłana w osobnym mailu. Link do płatności/dopłaty został wysłany osobnym mailem.
+Pozdrawiam</div>
+    <div class="col new"><b>Propozycja</b>Zamówienie przyjęte ✅ Proformę i link do płatności wysłaliśmy w osobnych mailach — sprawdź skrzynkę. Coś nie dotarło? Odpisz, pomożemy.
+
+[Imię]</div>
+  </div>
+
+  <h2>2. "Zwrot towaru" <span class="badge new">propozycja</span></h2>
+  <div class="tpl">
+    <div class="meta">Dział: DH · Kontekst: <code>Brak</code> · Proces: <code>Brak</code> · Temat: Zwrot towaru</div>
+    <div class="col"><b>Oryginał</b>Dzień dobry,
+jeśli chodzi o
+
+WYMIANĘ TOWARU:
+1. Spisz dokładne dane z tabliczki znamionowej urządzenia lub załącz jej zdjęcie. Dobierzemy prawidłową część i wyślemy Ci ofertę.
+2. Napisz nam: a) czy chcesz złożyć zamówienie, b) wybierz sposób zapłaty i dostawy, c) podaj adres dostawy.
+3. Zamówimy wskazaną część i jeżeli wybrałeś przedpłatę, wyślemy Ci dane do przelewu lub link do płatności.
+Koszt wysyłki kolejnego towaru wynosi 13,99-18,99 zł w zależności od wybranej formy zapłaty i dostawy.
+
+ZWROT TOWARU:
+Włóż naklejkę z kodem kreskowym do środka, nadaj paczkę na adres firmy:
+North.pl, ul. Inwestorska 26, 75-845 Koszalin
+
+Od momentu przyjęcia przesyłki do 14 dni zwrócimy wartość paragonu na to samo konto, z którego wpłynęła płatność lub na podane przez Ciebie dane.
+
+Nie odbieramy paczek za pobraniem.</div>
+    <div class="col new"><b>Propozycja</b>Masz do wyboru wymianę albo zwrot — obie ścieżki poniżej.
+
+WYMIANA
+1. Wyślij zdjęcie tabliczki znamionowej albo dokładne dane urządzenia — dobierzemy właściwą część.
+2. Potwierdź zamówienie, sposób płatności i adres dostawy.
+3. Wyślemy część (dopłata do wysyłki: 13,99-18,99 zł, zależnie od formy płatności/dostawy).
+
+ZWROT
+Włóż naklejkę z kodem kreskowym do paczki i wyślij na: North.pl, ul. Inwestorska 26, 75-845 Koszalin.
+Pieniądze wracają do 14 dni od odbioru przesyłki, na to samo konto. Paczek za pobraniem nie odbieramy.
+
+[Imię]</div>
+    <p style="color:var(--text-dim); font-size:.85rem; margin-top:4px;">Uwaga: oryginał zaczyna się od urwanego zdania "jeśli chodzi o" przed nagłówkiem — wygląda na błąd formatowania w oryginalnym szablonie, nie celowy zabieg.</p>
+  </div>
+
+  <h2>3. "[Allegro] - rękojmia" <span class="badge new">propozycja</span></h2>
+  <div class="tpl">
+    <div class="meta">Dział: DH · Kontekst: <code>Brak</code> · Proces: <code>Brak</code> · Temat: Informacja o rękojmi</div>
+    <div class="col"><b>Oryginał</b>Dzień dobry,
+zgodnie z prawem, na każdą sprzedaną przez firmę North.pl część obowiązuje 2 letni okres rękojmi na wady ukryte kupionego przedmiotu. W ciągu tego okresu, jeśli okaże się, że część zepsuła się lub nie spełnia swojego przeznaczenia, kupujący ma prawo do złożenia reklamacji, która zostanie rozpatrzona w możliwie najszybszym czasie.
+Pozdrawiam,</div>
+    <div class="col new"><b>Propozycja</b>Zgodnie z prawem każda część od North.pl ma 2-letnią rękojmię na wady ukryte. Jeśli w tym czasie coś się zepsuje albo nie zadziała jak trzeba — zgłoś reklamację, rozpatrzymy ją najszybciej jak się da.
+
+[Imię]</div>
+  </div>
+
+  <h2>4. "nie odbierze paczki" <span class="badge flag">do wyjaśnienia</span></h2>
+  <div class="tpl">
+    <div class="meta">Dział: DH · Kontekst: <code>Brak</code> · Proces: <code>Brak</code> · Temat: (brak)</div>
+    <div class="col"><b>Oryginał</b>Dzień dobry,
+paczka wczoraj została już wysłana. Proszę jej nie odbierać.
+Pozdrawiam</div>
+    <div class="col flag"><b>Do wyjaśnienia</b>Treść jest niejednoznaczna — "proszę jej nie odbierać" brzmi jak instrukcja dla kogoś, kto ma odmówić przyjęcia paczki (np. pomyłkowa/duplikat), a nie standardowa wiadomość do klienta. Zanim zaproponuję nową wersję, trzeba ustalić: do kogo faktycznie idzie ten mail i w jakiej sytuacji — nazwa i treść nie mówią tego wprost.</div>
+  </div>
+
+  <h2>5. "Wysyłka korekty faktury VAT" <span class="badge new">propozycja</span></h2>
+  <div class="tpl">
+    <div class="meta">Systemowy · Dział: Faktury · Kontekst: <code>Brak</code> · Proces: <code>Brak</code> · Temat: Faktura korygująca numer [%faktura]</div>
+    <div class="col"><b>Oryginał</b>Dzień dobry,
+w załączniku przesyłamy fakturę korygującą o numerze [%faktura].
+
+Pozdrawiamy</div>
+    <div class="col new"><b>Propozycja</b>W załączniku faktura korygująca nr [%faktura]. Coś się nie zgadza albo masz pytania do korekty? Odpisz.
+
+[Imię]</div>
+  </div>
+
+  <h2>6. "NNW" <span class="badge ok">layout, nie treść</span></h2>
+  <div class="tpl">
+    <div class="meta">Dział: north · Kontekst: <code>Brak</code> · Proces: <code>Brak</code> · Temat: NNW</div>
+    <div class="col ok"><b>Obserwacja</b>To szablon-layout (logo North + baner "Chroń środowisko" + stopka z CTA "skontaktuj się z nami" / link do akcji Naprawiaj Nie Wyrzucaj) — prawie bez unikalnego tekstu. Prawdopodobnie używany jako wizualna rama dla innych maili, nie samodzielna wiadomość. Nie wymaga przepisania treści — ewentualnie warto sprawdzić, czy nadal jest gdziekolwiek aktywnie używany.</div>
+  </div>
+
+  <h2>7. "Film opublikowany - info do klienta [NNW]" <span class="badge ok">już dobry</span></h2>
+  <div class="tpl">
+    <div class="meta">Kontekst: <code>Klient</code> · Proces: <code>Opinia</code> · Temat: Film z naprawy został opublikowany - prześlij znajomym</div>
+    <div class="col ok"><b>Oryginał (bez zmian)</b>Dzień dobry.
+Miło nam poinformować, że Państwa film z wymiany *XXXX w rodzaj marka), został opublikowany na naszym kanale pod linkiem:
+[link yt]
+
+Zachęcamy do wysłania znajomym linku do filmu i podzielenia się tą historią.
+Dziękujemy!
+
+P.S. Mamy nadzieję, że są Państwo zadowoleni z wysłanego wcześniej prezentu.
+
+Pozdrawiam
+Grzegorz Michalak</div>
+    <p style="color:var(--text-dim); font-size:.85rem; margin-top:4px;">Spersonalizowany, ciepły ton, podpis z imienia i nazwiska. Wzmianka o prezencie za udostępniony film to już realny element programu ambasadorskiego — patrz <a href="../branding-komunikacji/02-kanaly-i-ambasadorzy.html" style="color:var(--accent)">raport 02</a>.</p>
+  </div>
+
+  <h2>8. "[CX] Dowód zakupu north.pl" <span class="badge ok">już dobry</span></h2>
+  <div class="tpl">
+    <div class="meta">Kontekst: <code>Zamówienie zrealizowane</code> · Proces: <code>Dokument</code> · Dział: E-Faktury · Temat: Dowód zakupu numer [%faktura].</div>
+    <div class="col ok"><b>Oryginał (bez zmian)</b>Dowód zakupu
+
+Dzień dobry, mam na imię Patrycja i wraz z moim zespołem jesteśmy odpowiedzialni za jakość obsługi klienta w sklepie north.pl. Ogromnie mnie cieszy, że zdecydowałeś/aś się naprawić, a nie wyrzucić swój sprzęt.
+
+Skoro niedługo otrzymasz zamówione części, przyłącz się do akcji Naprawiaj, nie wyrzucaj.
+
+[Poznaj szczegóły akcji]</div>
+    <p style="color:var(--text-dim); font-size:.85rem; margin-top:4px;">Dobry przykład: realne imię, osobisty ton, jasne CTA do akcji. Wzorzec do naśladowania w innych szablonach.</p>
+  </div>
+
+  <h2>9. "uszczelka uniwersalna" <span class="badge new">propozycja</span></h2>
+  <div class="tpl">
+    <div class="meta">Dział: DH · Kontekst: <code>Brak</code> · Proces: <code>Brak</code> · Temat: (brak)</div>
+    <div class="col"><b>Oryginał</b>Dzień dobry,
+Oryginalna uszczelka do tego modelu jest niedostępna. Możemy zaproponować jedynie uszczelkę uniwersalną. Dostępne są dwa wymiary: uszczelka 130 cm x 70 cm (link) oraz uszczelka 200 cm x 100 cm (link).
+Uszczelkę należy przyciąć na wymiar. Do montażu potrzebne są także 2 łączniki oraz klej, które dołączone są do zestawów.
+Film instruktażowy pokazujący jak wymienić uszczelkę uniwersalną w lodówce znajdą Państwo, link do filmiku: [YT]
+
+Pozdrawiam,</div>
+    <div class="col new"><b>Propozycja</b>Oryginalnej uszczelki do tego modelu niestety nie mamy — możemy zaproponować uniwersalną, w dwóch wymiarach: 130×70 cm [link] albo 200×100 cm [link]. Trzeba ją przyciąć na wymiar; łączniki i klej są w zestawie. Jak to zrobić krok po kroku pokazujemy tutaj: [film]
+
+[Imię]</div>
+  </div>
+
+  <h2>10. "Tabliczka zmywarka" <span class="badge new">propozycja</span></h2>
+  <div class="tpl">
+    <div class="meta">Dział: DH · Kontekst: <code>Brak</code> · Proces: <code>Brak</code> · Temat: (brak)</div>
+    <div class="col"><b>Oryginał</b>Dzień dobry,
+proszę podać model sprzętu oraz jego numer serwisowy z tabliczki znamionowej urządzenia.
+Nie wiesz gdzie znaleźć tabliczkę znamionową? Kliknij w link
+
+Pamiętasz o regularnym czyszczeniu i odkamienianiu swojej zmywarki? Odkamieniacz
+Polecam również sprawdzenie naszych porad jak naprawić zmywarkę
+
+Pozdrawiam</div>
+    <div class="col new"><b>Propozycja</b>Podaj model i numer serwisowy z tabliczki znamionowej — [nie wiesz gdzie jej szukać? sprawdź tutaj]. Przy okazji: pamiętaj o regularnym odkamienianiu zmywarki — [polecany odkamieniacz]. Więcej porad: [jak naprawić zmywarkę]
+
+[Imię]</div>
+    <p style="color:var(--text-dim); font-size:.85rem; margin-top:4px;">Kolejne potwierdzenie wzorca "tabliczka znamionowa" z logu rozmów — patrz <a href="04-log-rzeczywistych-rozmow.html" style="color:var(--accent)">log rozmów, wniosek 6</a>.</p>
+  </div>
+
+  <h2>11. "[DFA] Zwrot środków" <span class="badge new">propozycja</span></h2>
+  <div class="tpl">
+    <div class="meta">Kontekst: <code>Klient</code> · Proces: <code>Kasa</code> · Dział: DFA · Temat: Zwrot należności</div>
+    <div class="col"><b>Oryginał</b>Dzień Dobry,
+zlecenie przelewu zostało przekazane do Działu Księgowości. Zwrot środków na podane przez Państwa konto bankowe nastąpi w ciągu 3 dni roboczych.
+Pozdrawiam,</div>
+    <div class="col new"><b>Propozycja</b>Zlecenie przelewu poszło do księgowości — zwrot na Twoje konto powinien dotrzeć w ciągu 3 dni roboczych.
+
+[Imię]</div>
+  </div>
+
+  <h2>12. "[CX] zmiana terminu realizacji: nie przyszlo w terminie" <span class="badge ok">już dobry</span></h2>
+  <div class="tpl">
+    <div class="meta">Kontekst: <code>Zamówienie</code> · Proces: <code>Kompletowanie</code> · Dział: CX · Temat: Status zamówienia [%z_numer_zam]</div>
+    <div class="col ok"><b>Oryginał (drobne skrócenie)</b>Dzień dobry,
+mimo podawanych terminów artykuł z zamówienia [%z_numer_zam] nie pojawił się na stanie naszego magazynu.
+Nie wiemy obecnie, jak długo będzie trzeba oczekiwać - towar jest trudno dostępny, dostawca nie jest w stanie doprecyzować terminu.
+Czy mimo to chcieliby Państwo utrzymać to zamówienie w realizacji?
+Przepraszamy najmocniej za zaistniałą sytuację.
+Pozdrawiam</div>
+    <p style="color:var(--text-dim); font-size:.85rem; margin-top:4px;">Uczciwy, transparentny ton — mówi wprost że nie zna terminu, zamiast składać puste obietnice, i daje klientowi realny wybór. Dobry wzorzec dla podobnych szablonów opóźnieniowych.</p>
+  </div>
+
+  <h2>13. "zapraszamy" <span class="badge flag">do wyjaśnienia</span></h2>
+  <div class="tpl">
+    <div class="meta">Dział: DH · Kontekst: <code>Brak</code> · Proces: <code>Brak</code> · Temat: (brak)</div>
+    <div class="col"><b>Oryginał</b>Dzień dobry.
+Dziękujemy, zapraszamy ponownie.
+Pozdrawiam</div>
+    <div class="col flag"><b>Do wyjaśnienia</b>Zbyt ogólne, żeby cokolwiek sensownie zaproponować — brak kontekstu, po jakiej sytuacji ten szablon jest wysyłany (po zakupie? po rozmowie? po reklamacji?). Nazwa i treść nie dają wystarczająco informacji.</p></div>
+  </div>
+
+  <h2>Podsumowanie pilotażu</h2>
+  <div class="callout">
+    Na 13 szablonów: <strong>8 dostało konkretną propozycję poprawy</strong>, <strong>3 są już dobre</strong> (w tym
+    dwa bardzo dobre wzorce z realnym imieniem i osobistym tonem — #7 i #8), <strong>2 wymagają wyjaśnienia kontekstu</strong>
+    zanim da się cokolwiek sensownie zaproponować (#4, #13). Wspólny wzorzec do poprawy w większości: zbyt sztywne
+    "Dzień dobry"/"Pozdrawiam" w każdej wiadomości, brak podpisu z imienia, czasem zbyt długie zdania.
+    Jeśli chcesz, mogę kontynuować na kolejnych partiach szablonów tą samą metodą.
+  </div>
+</div>
+</body>
+</html>
